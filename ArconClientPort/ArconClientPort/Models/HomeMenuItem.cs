@@ -6,8 +6,11 @@ namespace ArconClientPort.Models
 {
     public enum MenuItemType
     {
-        Browse,
-        About
+        Dashboard,
+        Profile,
+        ChangePassword,
+        LayoutSettings,
+        About,
     }
     public class HomeMenuItem
     {

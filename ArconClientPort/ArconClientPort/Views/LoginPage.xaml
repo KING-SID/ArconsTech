@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ArconClientPort.Views.LoginPage"
+             BackgroundColor="#EFFCFF">
+    <ContentPage.Content>
+        <Grid Padding="20" RowSpacing="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+
+                </Grid.ColumnDefinitions>
+                <Label x:Name="OrganizationName" 
+                   Text="*Company Name*" 
+                   Grid.Column="1"
+                   Grid.ColumnSpan="3"
+                   Grid.Row="1"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   HorizontalTextAlignment="Center"/>
+                <Entry x:Name="emailInput" 
+                   Placeholder="Email" 
+                   Keyboard="Email" 
+                   Grid.Column="1" 
+                   Grid.ColumnSpan="3"
+                   Grid.Row="3"
+                   BackgroundColor="White"/>
+                <Entry x:Name="passwordInput"
+                   Placeholder="Password"
+                   IsPassword="True"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="3"
+                   Grid.Row="4"
+                   BackgroundColor="White"/>
+                <Button x:Name="LoginButton"
+                    Text="Login"
+                    Grid.Column="2"
+                    Grid.Row="5"
+                    Clicked="LoginButton_Clicked"
+                    BackgroundColor="DarkGray"
+                    WidthRequest="50"
+                    BorderRadius="25"
+                    FontSize="Small"/>
+            </Grid>
+    </ContentPage.Content>
+</ContentPage>

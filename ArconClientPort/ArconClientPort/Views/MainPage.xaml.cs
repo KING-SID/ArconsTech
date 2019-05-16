@@ -17,7 +17,9 @@ namespace ArconClientPort.Views
 
             MasterBehavior = MasterBehavior.Popover;
 
-            MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
+            //MenuPages.Add((int)MenuItemType.Profile, (NavigationPage)Detail);
+            
+
         }
 
         public async Task NavigateFromMenu(int id)
@@ -26,9 +28,26 @@ namespace ArconClientPort.Views
             {
                 switch (id)
                 {
-                    case (int)MenuItemType.Browse:
+                    /*case (int)MenuItemType.Browse:
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));
+                        break;*/
+
+                    case (int)MenuItemType.Dashboard:
+                        MenuPages.Add (id, new NavigationPage(new DashboardPage()));
                         break;
+
+                    case (int)MenuItemType.Profile:
+                        MenuPages.Add(id, new NavigationPage(new ProfilePage()));
+                        break;
+
+                    case (int)MenuItemType.ChangePassword:
+                        MenuPages.Add(id, new NavigationPage(new ChangePasswordPage()));
+                        break;
+
+                    case (int)MenuItemType.LayoutSettings:
+                        MenuPages.Add(id, new NavigationPage(new LayoutSettingsPage()));
+                        break;
+
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;

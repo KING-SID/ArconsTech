@@ -17,7 +17,7 @@ namespace ArconClientPort.ViewModels
 
         public ItemsViewModel()
         {
-            Title = "Browse";
+            Title = "Dashboard";
             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 

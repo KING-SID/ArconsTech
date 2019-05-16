@@ -14,7 +14,7 @@ using ArconClientPort.ViewModels;
 namespace ArconClientPort.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ItemsPage : ContentPage
+    public partial class ItemsPage : TabbedPage
     {
         ItemsViewModel viewModel;
 
@@ -23,6 +23,8 @@ namespace ArconClientPort.Views
             InitializeComponent();
 
             BindingContext = viewModel = new ItemsViewModel();
+            
+
         }
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
@@ -34,7 +36,7 @@ namespace ArconClientPort.Views
             await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
 
             // Manually deselect item.
-            ItemsListView.SelectedItem = null;
+            //ItemsListView.SelectedItem = null;
         }
 
         async void AddItem_Clicked(object sender, EventArgs e)
@@ -48,6 +50,11 @@ namespace ArconClientPort.Views
 
             if (viewModel.Items.Count == 0)
                 viewModel.LoadItemsCommand.Execute(null);
+        }
+
+        async void NotificationBellBtn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new NotificationsPage());
         }
     }
 }

@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:datagrid="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             x:Class="ArconClientPort.Views.DashboardPage"
+             xmlns:cards="clr-namespace:Syncfusion.XForms.Cards;assembly=Syncfusion.Cards.XForms">
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Text="*Notification Icon*" x:Name="NotificationBellBtn" Clicked="NotificationBellBtn_Clicked"/>
+    </ContentPage.ToolbarItems>-->
+    <ScrollView>
+        <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Label Text="Date: " FontSize="Small" VerticalOptions="Center" FontAttributes="Bold"/>
+                <DatePicker MaximumDate="{x:Static sys:DateTime.Now}" x:Name="DatePickerDashboard"
+                        DateSelected="DatePickerDashboard_DateSelected" FontSize="Small"/>
+            </StackLayout>
+            
+            <Grid RowSpacing="2" ColumnSpacing="2" HeightRequest="300" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50*" />
+                    <RowDefinition Height="50*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <cards:SfCardView SwipeToDismiss="False" Grid.Row="0" Grid.Column="0">
+                    <Grid Padding="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Market Value: $*Value*" Grid.Column="0" Grid.Row="0" FontSize="Micro"/>
+                        <Label Text="Cash Available: $*Value*" Grid.Column="0" Grid.Row="1" LineBreakMode="WordWrap" FontSize="Micro"/>
+                        <Label Text="as of *Date*" Grid.Column="0" Grid.Row="2" FontSize="Micro"/>
+                        <Label Text="IMAGE GOES HERE" Grid.RowSpan="2" Grid.Column="1" Grid.Row="0"/>
+                        <Button Text="More" Grid.Column="1" Grid.Row="2" x:Name="SummaryWidgetPortfolio" FontSize="Micro"/>
+
+                    </Grid>
+
+                </cards:SfCardView>
+                <cards:SfCardView SwipeToDismiss="False" Grid.Row="0" Grid.Column="1">
+
+                    <Grid Padding="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="$*Value*" Grid.Column="0" Grid.Row="0" FontSize="Small"/>
+                        <Label Text="Interest and Dividends *Date*" Grid.Column="0" Grid.Row="2" FontSize="Micro"/>
+                        <Label Text="IMAGE GOES HERE" Grid.RowSpan="2" Grid.Column="1" Grid.Row="0" />
+                        <Button Text="More" Grid.Column="1" Grid.Row="2" FontSize="Micro"/>
+
+                    </Grid>
+
+                </cards:SfCardView>
+                <cards:SfCardView SwipeToDismiss="False" Grid.Row="1" Grid.Column="0">
+
+                    <Grid Padding="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="$*Value*" Grid.Column="0" Grid.Row="0" FontSize="Small"/>
+                        <Label Text="Deposits and Withdrawals *Date*" Grid.Column="0" Grid.Row="2" FontSize="Micro"/>
+                        <Label Text="IMAGE GOES HERE" Grid.RowSpan="2" Grid.Column="1" Grid.Row="0"/>
+                        <Button Text="More" Grid.Column="1" Grid.Row="2" FontSize="Micro"/>
+
+                    </Grid>
+
+                </cards:SfCardView>
+                <cards:SfCardView SwipeToDismiss="False" Grid.Row="1" Grid.Column="1">
+
+                    <Grid Padding="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="NA" Grid.Column="0" Grid.Row="0"/>
+                        <Label Text="Current Statement " Grid.Column="0" Grid.Row="2" FontSize="Micro"/>
+                        <Label Text="IMAGE GOES HERE" Grid.RowSpan="2" Grid.Column="1" Grid.Row="0"/>
+                        <Button Text="More" Grid.Column="1" Grid.Row="2" FontSize="Micro"/>
+
+                    </Grid>
+
+                </cards:SfCardView>
+
+            </Grid>
+
+            <cards:SfCardLayout SwipeDirection="Left" HeightRequest="500" ShowSwipedCard="True">
+
+
+
+                <cards:SfCardView>
+
+                    <chart:SfChart>
+                        <chart:SfChart.Title>
+                            <chart:ChartTitle Text="Activity in Period" />
+
+                        </chart:SfChart.Title>
+                        <chart:SfChart.PrimaryAxis>
+                            <chart:NumericalAxis>
+                                <chart:NumericalAxis.Title>
+                                    <chart:ChartAxisTitle Text="X Axis" />
+                                </chart:NumericalAxis.Title>
+                            </chart:NumericalAxis>
+                        </chart:SfChart.PrimaryAxis>
+                        <chart:SfChart.SecondaryAxis>
+                            <chart:NumericalAxis>
+                                <chart:NumericalAxis.Title>
+                                    <chart:ChartAxisTitle Text="Y Axis" />
+                                </chart:NumericalAxis.Title>
+                            </chart:NumericalAxis>
+                        </chart:SfChart.SecondaryAxis>
+                        <chart:ColumnSeries ItemsSource="{Binding Data}" YBindingPath="YValue" XBindingPath="XValue" />
+                    </chart:SfChart>
+
+                </cards:SfCardView>
+
+                <cards:SfCardView>
+
+                    <Grid Padding="25,25,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Activity in Period" Grid.Row="0" Grid.Column="0" 
+                               Grid.ColumnSpan="2" HorizontalTextAlignment="Center"
+                               TextDecorations="Underline" TextColor="Black"/>
+                        <Label Text="Portfolio value on 08/15/2018" Grid.Column="0" Grid.Row="1"/>
+                        <Label Text="Net Contribution" Grid.Column="0" Grid.Row="2"/>
+                        <Label Text="Realized Gains" Grid.Column="0" Grid.Row="3"/>
+                        <Label Text="Unrealized Gains" Grid.Column="0" Grid.Row="4"/>
+                        <Label Text="Interest" Grid.Column="0" Grid.Row="5"/>
+                        <Label Text="Dividends" Grid.Column="0" Grid.Row="6"/>
+                        <Label Text="Portfolio value on 07/01/2018" Grid.Column="0" Grid.Row="7"/>
+                        <Label Text="$2353935.05" Grid.Row="1" Grid.Column="1"/>
+                        <Label Text="$0.00" Grid.Row="2" Grid.Column="1"/>
+                        <Label Text="$0.00" Grid.Row="3" Grid.Column="1"/>
+                        <Label Text="$19453.07" Grid.Row="4" Grid.Column="1"/>
+                        <Label Text="$5.09" Grid.Row="5" Grid.Column="1"/>
+                        <Label Text="$8025.27" Grid.Row="6" Grid.Column="1"/>
+                        <Label Text="$2334481.98" Grid.Row="7" Grid.Column="1"/>
+
+
+                    </Grid>
+
+                </cards:SfCardView>
+
+            </cards:SfCardLayout>
+
+            <cards:SfCardView>
+                <datagrid:SfDataGrid 
+            ItemsSource="{Binding OrderInfoCollection}">
+                </datagrid:SfDataGrid>
+            </cards:SfCardView>
+
+            <cards:SfCardView HeightRequest="400">
+                <chart:SfChart>
+                    <chart:SfChart.Title>
+                        <chart:ChartTitle Text="Asset Allocation" />
+                    </chart:SfChart.Title>
+                    <chart:SfChart.PrimaryAxis>
+                        <chart:NumericalAxis>
+                            <chart:NumericalAxis.Title>
+                                <chart:ChartAxisTitle Text="X Axis" />
+                            </chart:NumericalAxis.Title>
+                        </chart:NumericalAxis>
+                    </chart:SfChart.PrimaryAxis>
+                    <chart:SfChart.SecondaryAxis>
+                        <chart:NumericalAxis>
+                            <chart:NumericalAxis.Title>
+                                <chart:ChartAxisTitle Text="Y Axis" />
+                            </chart:NumericalAxis.Title>
+                        </chart:NumericalAxis>
+                    </chart:SfChart.SecondaryAxis>
+                    <chart:ColumnSeries ItemsSource="{Binding Data}" YBindingPath="YValue" XBindingPath="XValue" />
+                </chart:SfChart>
+            </cards:SfCardView>
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

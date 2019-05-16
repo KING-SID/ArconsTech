@@ -18,8 +18,11 @@ namespace ArconClientPort.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="About" }
+                new HomeMenuItem {Id = MenuItemType.Dashboard, Title= "Dashboard"},
+                new HomeMenuItem {Id = MenuItemType.Profile, Title="Profile" },
+                new HomeMenuItem {Id = MenuItemType.ChangePassword, Title="Change Password" },
+                new HomeMenuItem {Id = MenuItemType.LayoutSettings, Title="Layout Settings"},
+                new HomeMenuItem {Id = MenuItemType.About, Title="About"}
             };
 
             ListViewMenu.ItemsSource = menuItems;

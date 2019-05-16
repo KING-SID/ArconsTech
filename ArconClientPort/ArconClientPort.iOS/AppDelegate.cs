@@ -1,4 +1,8 @@
-﻿using System;
+using Syncfusion.SfPicker.XForms.iOS;
+using Syncfusion.SfDataGrid.XForms.iOS;
+using Syncfusion.SfChart.XForms.iOS.Renderers;
+using Syncfusion.XForms.iOS.Cards;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -22,7 +26,11 @@ namespace ArconClientPort.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            global::Xamarin.Forms.Forms.Init();
+global::Xamarin.Forms.Forms.Init();
+SfPickerRenderer.Init();
+SfDataGridRenderer.Init();
+SfChartRenderer.Init();
+SfCardViewRenderer.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
