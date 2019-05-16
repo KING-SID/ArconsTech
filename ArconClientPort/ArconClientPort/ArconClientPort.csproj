@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <PackageReference Include="Syncfusion.Xamarin.Cards" Version="17.1.0.44" />
+    <PackageReference Include="Syncfusion.Xamarin.SfBadgeView" Version="17.1.0.44" />
     <PackageReference Include="Syncfusion.Xamarin.SfChart" Version="17.1.0.44" />
     <PackageReference Include="Syncfusion.Xamarin.SfDataGrid" Version="17.1.0.44" />
     <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="17.1.0.47" />

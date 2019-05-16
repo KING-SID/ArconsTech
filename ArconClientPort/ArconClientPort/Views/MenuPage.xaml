@@ -3,9 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ArconClientPort.Views.MenuPage"
              Title="Menu">
-    <StackLayout VerticalOptions="FillAndExpand">
+    <StackLayout VerticalOptions="FillAndExpand" >
+        <StackLayout BackgroundColor="SteelBlue" Padding="3" Orientation="Horizontal" HeightRequest="200">
+            <Label Text="*Account Name*" FontSize="Large" HorizontalOptions="CenterAndExpand" 
+                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
+                   VerticalOptions="End" FontAttributes="Bold" TextColor="White"/>
+            <ImageButton BackgroundColor="SteelBlue" Source="dropdownarrow.png" x:Name="LgOutBtn"
+                         Clicked="LgOutBtn_Clicked" HorizontalOptions="End" VerticalOptions="End"/>
+        </StackLayout>
         <ListView x:Name="ListViewMenu"
-                    HasUnevenRows="True">
+                    HasUnevenRows="True"
+                  >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -16,5 +24,10 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="EndAndExpand" Padding="2,20,2,20" Spacing="15">
+            <Label TextColor="Gray" FontSize="Small" Text="ClientPort Mobile Application" HorizontalTextAlignment="Center"/>
+            <Label FontSize="Small" Text="Version 1.0" TextColor="Gray" HorizontalTextAlignment="Center"/>
+            <Label FontSize="Small" Text="Arcons Technology Inc." TextColor="Gray" HorizontalTextAlignment="Center" />
+        </StackLayout>
     </StackLayout>
 </ContentPage>

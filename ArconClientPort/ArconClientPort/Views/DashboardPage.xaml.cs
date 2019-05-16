@@ -18,20 +18,18 @@ namespace ArconClientPort.Views
             NavigationPage.SetHasNavigationBar(this, false);  // Hide nav bar
         }
 
-        private void DatePickerDashboard_DateSelected(object sender, DateChangedEventArgs e)
-        {
-            
-        }
 
         async void NotificationBellBtn_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new NotificationsPage());
         }
 
-        //private async void SummaryWidgetPortfolio_Clicked(object sender, EventArgs e)
-        //{
-        //   await Navigation.PushAsync(new PortfolioPage());
-        //}
+        async void SummaryWidgetPortfolio_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new PortfolioPage());
+        }
+
+
 
     }
 }

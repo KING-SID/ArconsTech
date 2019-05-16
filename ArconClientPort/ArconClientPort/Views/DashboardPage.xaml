@@ -12,11 +12,7 @@ xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart
     </ContentPage.ToolbarItems>-->
     <ScrollView>
         <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
-            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                <Label Text="Date: " FontSize="Small" VerticalOptions="Center" FontAttributes="Bold"/>
-                <DatePicker MaximumDate="{x:Static sys:DateTime.Now}" x:Name="DatePickerDashboard"
-                        DateSelected="DatePickerDashboard_DateSelected" FontSize="Small"/>
-            </StackLayout>
+
             
             <Grid RowSpacing="2" ColumnSpacing="2" HeightRequest="300" >
                 <Grid.RowDefinitions>
@@ -38,11 +34,12 @@ xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Label Text="Market Value: $*Value*" Grid.Column="0" Grid.Row="0" FontSize="Micro"/>
-                        <Label Text="Cash Available: $*Value*" Grid.Column="0" Grid.Row="1" LineBreakMode="WordWrap" FontSize="Micro"/>
+                        <Label Text="Market Value: $*Value*" Grid.Column="0" Grid.Row="0" FontSize="Micro" FontAttributes="Bold"/>
+                        <Label Text="Cash Available: $*Value*" Grid.Column="0" Grid.Row="1" LineBreakMode="WordWrap" FontSize="Micro"
+                               FontAttributes="Bold"/>
                         <Label Text="as of *Date*" Grid.Column="0" Grid.Row="2" FontSize="Micro"/>
-                        <Label Text="IMAGE GOES HERE" Grid.RowSpan="2" Grid.Column="1" Grid.Row="0"/>
-                        <Button Text="More" Grid.Column="1" Grid.Row="2" x:Name="SummaryWidgetPortfolio" FontSize="Micro"/>
+                        <Image Source="mktval.png" Grid.RowSpan="2" Grid.Column="1" Grid.Row="0"/>
+                        <Button Text="More" Grid.Column="1" Grid.Row="2" x:Name="SummaryWidgetPortfolio" FontSize="Micro" Clicked="SummaryWidgetPortfolio_Clicked"/>
 
                     </Grid>
 
@@ -59,9 +56,9 @@ xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Label Text="$*Value*" Grid.Column="0" Grid.Row="0" FontSize="Small"/>
+                        <Label Text="$*Value*" Grid.Column="0" Grid.Row="0" FontSize="Small" FontAttributes="Bold"/>
                         <Label Text="Interest and Dividends *Date*" Grid.Column="0" Grid.Row="2" FontSize="Micro"/>
-                        <Label Text="IMAGE GOES HERE" Grid.RowSpan="2" Grid.Column="1" Grid.Row="0" />
+                        <Image Source="interestndivs.png"  Grid.RowSpan="2" Grid.Column="1" Grid.Row="0" />
                         <Button Text="More" Grid.Column="1" Grid.Row="2" FontSize="Micro"/>
 
                     </Grid>
@@ -79,9 +76,9 @@ xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Label Text="$*Value*" Grid.Column="0" Grid.Row="0" FontSize="Small"/>
+                        <Label Text="$*Value*" Grid.Column="0" Grid.Row="0" FontSize="Small" FontAttributes="Bold"/>
                         <Label Text="Deposits and Withdrawals *Date*" Grid.Column="0" Grid.Row="2" FontSize="Micro"/>
-                        <Label Text="IMAGE GOES HERE" Grid.RowSpan="2" Grid.Column="1" Grid.Row="0"/>
+                        <Image Source="depnwids.png" Grid.RowSpan="2" Grid.Column="1" Grid.Row="0"/>
                         <Button Text="More" Grid.Column="1" Grid.Row="2" FontSize="Micro"/>
 
                     </Grid>
@@ -99,9 +96,9 @@ xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Label Text="NA" Grid.Column="0" Grid.Row="0"/>
+                        <Label Text="NA" Grid.Column="0" Grid.Row="0" FontAttributes="Bold"/>
                         <Label Text="Current Statement " Grid.Column="0" Grid.Row="2" FontSize="Micro"/>
-                        <Label Text="IMAGE GOES HERE" Grid.RowSpan="2" Grid.Column="1" Grid.Row="0"/>
+                        <Image Source="curstate.png" Grid.RowSpan="2" Grid.Column="1" Grid.Row="0"/>
                         <Button Text="More" Grid.Column="1" Grid.Row="2" FontSize="Micro"/>
 
                     </Grid>

@@ -37,5 +37,16 @@ namespace ArconClientPort.Views
                 await RootPage.NavigateFromMenu(id);
             };
         }
+
+        async void LgOutBtn_Clicked(object sender, EventArgs e)
+        {
+            bool LogOutPrompt = await DisplayAlert("Session Sign Out", "", "Log Out", "Cancel");
+            if (LogOutPrompt)
+            {
+                Application.Current.MainPage = new LoginPage();
+            }
+
+
+        }
     }
 }

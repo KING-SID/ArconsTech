@@ -1,3 +1,4 @@
+using Syncfusion.XForms.iOS.BadgeView;
 using Syncfusion.SfPicker.XForms.iOS;
 using Syncfusion.SfDataGrid.XForms.iOS;
 using Syncfusion.SfChart.XForms.iOS.Renderers;
@@ -27,6 +28,7 @@ namespace ArconClientPort.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
 global::Xamarin.Forms.Forms.Init();
+SfBadgeViewRenderer.Init();
 SfPickerRenderer.Init();
 SfDataGridRenderer.Init();
 SfChartRenderer.Init();

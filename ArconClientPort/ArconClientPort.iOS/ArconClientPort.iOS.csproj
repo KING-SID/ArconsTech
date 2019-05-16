@@ -136,6 +136,9 @@
     <PackageReference Include="Syncfusion.Xamarin.Cards">
       <Version>17.1.0.44</Version>
     </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfBadgeView">
+      <Version>17.1.0.44</Version>
+    </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfChart">
       <Version>17.1.0.44</Version>
     </PackageReference>
@@ -157,5 +160,32 @@
       <Project>{548A7AE9-260D-4863-83C4-3310C2FB2B1E}</Project>
       <Name>ArconClientPort</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\baseline_notifications_white_24pt_3x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\baseline_notifications_white_24pt_1x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\baseline_notifications_white_24pt_2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\notbell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\interestndivs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mktval.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\depnwids.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\curstate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\dropdownarrow.png" />
   </ItemGroup>
 </Project>

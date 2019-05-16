@@ -1,11 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:badge="clr-namespace:Syncfusion.XForms.BadgeView;assembly=Syncfusion.SfBadgeView.XForms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:views="clr-namespace:ArconClientPort.Views"
-            x:Class="ArconClientPort.Views.ItemsPage">
+            x:Class="ArconClientPort.Views.ItemsPage"
+            xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="*Notification Icon*" x:Name="NotificationBellBtn" Clicked="NotificationBellBtn_Clicked"/>
+        <ToolbarItem Icon="notbell.png" x:Name="NotificationBellBtn" Clicked="NotificationBellBtn_Clicked"/>
     </ContentPage.ToolbarItems>
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Label Text="Date: " FontSize="Small" VerticalOptions="Center" FontAttributes="Bold" TextColor="White"/>
+            <DatePicker MaximumDate="{x:Static sys:DateTime.Now}" x:Name="DatePickerDashboard"
+                        DateSelected="DatePickerDashboard_DateSelected" FontSize="Small" TextColor="White"/>
+           
+        </StackLayout>
+    </NavigationPage.TitleView>
     <!--<TabbedPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="AddItem_Clicked">
             <ToolbarItem.Icon>
@@ -45,28 +55,28 @@
         </ListView>
     </StackLayout>-->
 
-        <TabbedPage.Children>
-            <NavigationPage Title="Dashboard" Icon="">
-                <x:Arguments>
-                    <views:DashboardPage/>
-                </x:Arguments>
-            </NavigationPage>
-            <NavigationPage Title="Statements" Icon="">
-                <x:Arguments>
-                    <views:StatementsPage/>
-                </x:Arguments>
-            </NavigationPage>
-            <NavigationPage Title="Documents" Icon="">
-                <x:Arguments>
-                    <views:DocumentsPage/>
-                </x:Arguments>
-            </NavigationPage>
-            <NavigationPage Title="Portfolio" Icon="">
-                <x:Arguments>
-                    <views:PortfolioPage/>
-                </x:Arguments>
-            </NavigationPage>
-        </TabbedPage.Children>
+    <TabbedPage.Children>
+        <NavigationPage Title="Dashboard" Icon="">
+            <x:Arguments>
+                <views:DashboardPage/>
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Statements" Icon="">
+            <x:Arguments>
+                <views:StatementsPage/>
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Documents" Icon="">
+            <x:Arguments>
+                <views:DocumentsPage/>
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Portfolio" Icon="">
+            <x:Arguments>
+                <views:PortfolioPage/>
+            </x:Arguments>
+        </NavigationPage>
+    </TabbedPage.Children>
     <!--xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
             BarTextColor="White"

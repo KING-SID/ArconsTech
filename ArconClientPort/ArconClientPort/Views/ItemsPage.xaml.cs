@@ -23,7 +23,7 @@ namespace ArconClientPort.Views
             InitializeComponent();
 
             BindingContext = viewModel = new ItemsViewModel();
-            
+
 
         }
 
@@ -55,6 +55,11 @@ namespace ArconClientPort.Views
         async void NotificationBellBtn_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new NotificationsPage());
+        }
+
+        private void DatePickerDashboard_DateSelected(object sender, DateChangedEventArgs e)
+        {
+
         }
     }
 }
