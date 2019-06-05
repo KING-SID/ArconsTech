@@ -26,9 +26,9 @@ namespace ArconClientPort
                 DependencyService.Register<AzureDataStore>();
 
             DateSelected.datechosen = DateTime.Now;
-            //MainPage =  new LoginPage();
+            MainPage =  new LoginPage();
             //MainPage = new NotificationsPage();
-            MainPage = new DashboardPage();
+            //MainPage = new DashboardPage();
             //Navigation{ new LoginPage() };
             //DateSelected.DateRange = DateTime.Now;
             //MainPage = new NavigationPage (new TestINotifyPage());

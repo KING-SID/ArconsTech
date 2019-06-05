@@ -36,7 +36,7 @@ xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart
     <ScrollView>
      
 
-        <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+        <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" Spacing="15">
             
 
             <Grid RowSpacing="2" ColumnSpacing="2" HeightRequest="230" >
