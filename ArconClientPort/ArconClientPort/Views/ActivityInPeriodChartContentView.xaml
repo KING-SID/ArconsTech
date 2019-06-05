@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             xmlns:assets="clr-namespace:ArconClientPort.ViewModels"
+             x:Class="ArconClientPort.Views.ActivityInPeriodChartContentView">
+   
+    <chart:SfChart x:Name="ActivityInPeriodChart" ChartPadding="15,15,15,60">
+        <chart:SfChart.BindingContext>
+            <assets:ActivityInPeriodViewModel/>
+        </chart:SfChart.BindingContext>
+        <chart:SfChart.Title>
+
+            <chart:ChartTitle Text="Activity In Period"/>
+
+        </chart:SfChart.Title>
+
+        <chart:SfChart.PrimaryAxis>
+
+            <chart:CategoryAxis>
+                <chart:CategoryAxis.Title>
+                    <chart:ChartAxisTitle Text=""></chart:ChartAxisTitle>
+                </chart:CategoryAxis.Title>
+            </chart:CategoryAxis>
+
+        </chart:SfChart.PrimaryAxis>
+
+        <chart:SfChart.SecondaryAxis>
+
+            <chart:NumericalAxis>
+                <chart:NumericalAxis.Title>
+                    <chart:ChartAxisTitle Text="Values (in US Dollars)"></chart:ChartAxisTitle>
+                </chart:NumericalAxis.Title>
+            </chart:NumericalAxis>
+
+        </chart:SfChart.SecondaryAxis>
+        <chart:ColumnSeries ItemsSource="{Binding Data}" XBindingPath="Activity"  EnableTooltip="True"
+                                            YBindingPath="Value" Color="DarkTurquoise" EnableAnimation="True">
+            <chart:ColumnSeries.TooltipTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding Activity}"/>
+                        <Label Text=":" />
+                        <Label Text="{Binding Value}"/>
+                    </StackLayout>
+                </DataTemplate>
+            </chart:ColumnSeries.TooltipTemplate>
+            <chart:ColumnSeries.DataMarker>
+                <chart:ChartDataMarker>
+                    <chart:ChartDataMarker.LabelStyle>
+                        <chart:DataMarkerLabelStyle BackgroundColor="RosyBrown"/>
+                    </chart:ChartDataMarker.LabelStyle>
+                </chart:ChartDataMarker>
+            </chart:ColumnSeries.DataMarker>
+        </chart:ColumnSeries>
+
+    </chart:SfChart>
+</ContentView>

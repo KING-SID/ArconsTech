@@ -23,43 +23,35 @@ namespace ArconClientPort.Views
             InitializeComponent();
 
             BindingContext = viewModel = new ItemsViewModel();
-
-
+            //DatePickerDashboard.BindingContext = DateSelected.DateRange;
+            //DatePickerDashboard.SetBinding(DatePicker.DateProperty, "Date");
+            NavigationPage.SetHasNavigationBar(this, false);
+           
         }
 
-        async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
-        {
-            var item = args.SelectedItem as Item;
-            if (item == null)
-                return;
+       
 
-            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
-
-            // Manually deselect item.
-            //ItemsListView.SelectedItem = null;
-        }
-
-        async void AddItem_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
-        }
+        
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
+           // DatePickerDashboard.Date = DateSelected.DateRange;
 
             if (viewModel.Items.Count == 0)
                 viewModel.LoadItemsCommand.Execute(null);
         }
 
-        async void NotificationBellBtn_Clicked(object sender, EventArgs e)
+         async void NotificationBellBtn_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new NotificationsPage());
         }
 
-        private void DatePickerDashboard_DateSelected(object sender, DateChangedEventArgs e)
+        public async void DatePickerDashboard_DateSelected(object sender, DateChangedEventArgs e)
         {
-
+            DateSelected.DateRange = e.NewDate;
+            await Task.Delay(300);
+            Application.Current.MainPage = new MainPage();
         }
     }
 }

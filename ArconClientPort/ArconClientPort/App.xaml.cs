@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using ArconClientPort.Services;
 using ArconClientPort.Views;
+using ArconClientPort.ViewModels;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace ArconClientPort
@@ -17,12 +18,23 @@ namespace ArconClientPort
         {
             InitializeComponent();
 
+            DateSelected.DateRange = DateTime.Now;
+       
             if (UseMockDataStore)
                 DependencyService.Register<MockDataStore>();
             else
                 DependencyService.Register<AzureDataStore>();
 
-            MainPage = new LoginPage();
+            DateSelected.datechosen = DateTime.Now;
+            //MainPage =  new LoginPage();
+            //MainPage = new NotificationsPage();
+            MainPage = new DashboardPage();
+            //Navigation{ new LoginPage() };
+            //DateSelected.DateRange = DateTime.Now;
+            //MainPage = new NavigationPage (new TestINotifyPage());
+            
+         
+          
         }
 
         protected override void OnStart()

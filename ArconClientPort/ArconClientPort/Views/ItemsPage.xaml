@@ -5,55 +5,20 @@ xmlns:badge="clr-namespace:Syncfusion.XForms.BadgeView;assembly=Syncfusion.SfBad
             xmlns:views="clr-namespace:ArconClientPort.Views"
             x:Class="ArconClientPort.Views.ItemsPage"
             xmlns:sys="clr-namespace:System;assembly=mscorlib">
-    <ContentPage.ToolbarItems>
+    <!--<ContentPage.ToolbarItems>
         <ToolbarItem Icon="notbell.png" x:Name="NotificationBellBtn" Clicked="NotificationBellBtn_Clicked"/>
-    </ContentPage.ToolbarItems>
-    <NavigationPage.TitleView>
+    </ContentPage.ToolbarItems> -->
+
+ 
+   <!-- <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
             <Label Text="Date: " FontSize="Small" VerticalOptions="Center" FontAttributes="Bold" TextColor="White"/>
-            <DatePicker MaximumDate="{x:Static sys:DateTime.Now}" x:Name="DatePickerDashboard"
-                        DateSelected="DatePickerDashboard_DateSelected" FontSize="Small" TextColor="White"/>
-           
+            <DatePicker MaximumDate="{x:Static sys:DateTime.Now}"  x:Name="DatePickerDashboard" 
+                        FontSize="Small" TextColor="White" DateSelected="DatePickerDashboard_DateSelected"/>
+            DateSelected="DatePickerDashboard_DateSelected"
+           <Entry Text="{Binding Name}"/>
         </StackLayout>
-    </NavigationPage.TitleView>
-    <!--<TabbedPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="AddItem_Clicked">
-            <ToolbarItem.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="UWP" Value="add.png"/>
-                </OnPlatform>
-            </ToolbarItem.Icon>
-        </ToolbarItem>
-    </TabbedPage.ToolbarItems>-->
-
-    <!--<ListView x:Name="ItemsListView"
-    <StackLayout>
-                ItemsSource="{Binding Items}"
-                VerticalOptions="FillAndExpand"
-                HasUnevenRows="true"
-                RefreshCommand="{Binding LoadItemsCommand}"
-                IsPullToRefreshEnabled="true"
-                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                CachingStrategy="RecycleElement"
-                ItemSelected="OnItemSelected">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Padding="10">
-                            <Label Text="{Binding Text}" 
-                                LineBreakMode="NoWrap" 
-                                Style="{DynamicResource ListItemTextStyle}" 
-                                FontSize="16" />
-                            <Label Text="{Binding Description}" 
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="13" />
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>-->
+    </NavigationPage.TitleView>-->
 
     <TabbedPage.Children>
         <NavigationPage Title="Dashboard" Icon="">

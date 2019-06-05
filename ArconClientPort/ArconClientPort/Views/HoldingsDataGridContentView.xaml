@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:datagrid="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             xmlns:assets="clr-namespace:ArconClientPort.ViewModels"
+             x:Class="ArconClientPort.Views.HoldingsDataGridContentView">
+
+    <datagrid:SfDataGrid x:Name="holdingsdatagrid" AllowResizingColumn="True" HeaderRowHeight="53" HorizontalOptions="Fill"
+            ItemsSource="{Binding HoldingDataCollection}" ResizingMode="OnTouchUp">
+        <datagrid:SfDataGrid.BindingContext>
+            <assets:HoldingsViewModel x:Name="holdingsviewmodel"/>
+        </datagrid:SfDataGrid.BindingContext>
+        <datagrid:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
+            <datagrid:GridTextColumn HeaderText="Holdings ID"
+                                   MappingName="HoldingID" Width="0" TextAlignment="Center" />
+            <datagrid:GridTextColumn HeaderText="Securities"
+                                   MappingName="Securities" TextAlignment="Center" />
+            <datagrid:GridTextColumn HeaderText="Cost Basis" MappingName="CostBasis" TextAlignment="Center" />
+            <datagrid:GridTextColumn HeaderText="Market Value" MappingName="MarketValue" TextAlignment="Center" />
+            <datagrid:GridTextColumn HeaderText="Holding Percentage (%)" MappingName="HoldingPercentage" TextAlignment="Center" />
+            <datagrid:GridTextColumn HeaderText="Unrealized Gains" MappingName="UnrealGains" TextAlignment="Center" />
+            <datagrid:GridTextColumn HeaderText="Unrealized Gains Percentage (%)" MappingName="UnrealGainsPercent" TextAlignment="Center" />
+
+        </datagrid:SfDataGrid.Columns>
+    </datagrid:SfDataGrid>
+
+</ContentView>

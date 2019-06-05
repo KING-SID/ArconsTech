@@ -39,6 +39,17 @@ namespace ArconClientPort.Views
 
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
+
+
+
+
+        }
+
+        async void BackBtnNotificationsPage_Clicked(object sender, EventArgs e)
+        {
+            //await Navigation.PushAsync(new ItemsPage());
+
+            await Navigation.PopAsync();
         }
     }
 }

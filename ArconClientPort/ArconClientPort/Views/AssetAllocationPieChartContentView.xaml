@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             xmlns:assets="clr-namespace:ArconClientPort.ViewModels"
+             x:Class="ArconClientPort.Views.AssetAllocationPieChartContentView">
+
+    <chart:SfChart ChartPadding="15,15,15,60">
+        <chart:SfChart.BindingContext>
+            <assets:AssetAllocationViewModel/>
+        </chart:SfChart.BindingContext>
+        <chart:SfChart.Legend>
+            <chart:ChartLegend OverflowMode="Wrap"/>
+        </chart:SfChart.Legend>
+        <chart:SfChart.Title>
+            <chart:ChartTitle Text="Investments by Asset Class" />
+        </chart:SfChart.Title>
+        <chart:SfChart.PrimaryAxis>
+            <chart:NumericalAxis>
+                <chart:NumericalAxis.Title>
+                    <chart:ChartAxisTitle Text="Asset Class" />
+                </chart:NumericalAxis.Title>
+            </chart:NumericalAxis>
+        </chart:SfChart.PrimaryAxis>
+        <chart:SfChart.SecondaryAxis>
+            <chart:NumericalAxis>
+                <chart:NumericalAxis.Title>
+                    <chart:ChartAxisTitle Text="Market Value in USD" />
+                </chart:NumericalAxis.Title>
+            </chart:NumericalAxis>
+        </chart:SfChart.SecondaryAxis>
+        <chart:PieSeries EnableTooltip="True" ItemsSource="{Binding AssetAllocationData}" EnableAnimation="True" 
+                                                YBindingPath="MarketValue" XBindingPath="AssetClass"
+                                     DataMarkerPosition="Inside" EnableSmartLabels="True">
+            <chart:PieSeries.DataMarker>
+
+                <chart:ChartDataMarker LabelContent="Percentage"/>
+
+            </chart:PieSeries.DataMarker>
+
+            <chart:PieSeries.TooltipTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal">
+
+                        <Label Text="{Binding AssetClass}" TextColor="White" FontSize="Small"/>
+                        <Label Text=":"  TextColor="White"/>
+                        <Label Text="{Binding MarketValue}" TextColor="White" FontSize="Small"/>
+                    </StackLayout>
+                </DataTemplate>
+            </chart:PieSeries.TooltipTemplate>
+
+        </chart:PieSeries>
+    </chart:SfChart>
+</ContentView>

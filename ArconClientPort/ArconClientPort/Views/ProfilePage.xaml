@@ -2,14 +2,25 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ArconClientPort.Views.ProfilePage"
-             NavigationPage.HasNavigationBar="False" >
+              >
     <ContentPage.Content>
         <StackLayout>
-            
-            <Label Text="Profile"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Button Text="Back" x:Name="BackToDashboard" Clicked="BackToDashboard_Clicked"/>
+            <Grid Padding="5,5,5,0" VerticalOptions="Start">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Label Text="Profile" HorizontalOptions="Center" VerticalTextAlignment="Center" 
+                FontSize="Medium" Grid.Column="1" Grid.Row="0" LineBreakMode="NoWrap"/>
+            </Grid>
+            <StackLayout VerticalOptions="Fill">
+
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

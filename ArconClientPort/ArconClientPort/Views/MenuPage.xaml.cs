@@ -11,7 +11,7 @@ namespace ArconClientPort.Views
     public partial class MenuPage : ContentPage
     {
         MainPage RootPage { get => Application.Current.MainPage as MainPage; }
-        List<HomeMenuItem> menuItems;
+        List<HomeMenuItem> menuItems=null;
         public MenuPage()
         {
             InitializeComponent();
@@ -19,10 +19,7 @@ namespace ArconClientPort.Views
             menuItems = new List<HomeMenuItem>
             {
                 new HomeMenuItem {Id = MenuItemType.Dashboard, Title= "Dashboard"},
-                new HomeMenuItem {Id = MenuItemType.Profile, Title="Profile" },
-                new HomeMenuItem {Id = MenuItemType.ChangePassword, Title="Change Password" },
-                new HomeMenuItem {Id = MenuItemType.LayoutSettings, Title="Layout Settings"},
-                new HomeMenuItem {Id = MenuItemType.About, Title="About"}
+                new HomeMenuItem {Id = MenuItemType.About, Title="About"},
             };
 
             ListViewMenu.ItemsSource = menuItems;

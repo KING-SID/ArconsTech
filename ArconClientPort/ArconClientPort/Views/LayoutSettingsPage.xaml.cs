@@ -16,5 +16,10 @@ namespace ArconClientPort.Views
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private void LayoutStPgBackBtnNotificationsPage_Clicked(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new MainPage();
+        }
+    }
 }

@@ -10,16 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace ArconClientPort.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ChangePasswordPage : ContentPage
+	public partial class HoldingsDataGridContentView : ContentView
 	{
-		public ChangePasswordPage ()
+		public HoldingsDataGridContentView ()
 		{
 			InitializeComponent ();
 		}
-
-        private void ChangePwdPgBackBtnNotificationsPage_Clicked(object sender, EventArgs e)
-        {
-            Application.Current.MainPage = new MainPage();
-        }
-    }
+	}
 }

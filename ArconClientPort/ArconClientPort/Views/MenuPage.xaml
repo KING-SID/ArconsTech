@@ -4,12 +4,18 @@
              x:Class="ArconClientPort.Views.MenuPage"
              Title="Menu">
     <StackLayout VerticalOptions="FillAndExpand" >
-        <StackLayout BackgroundColor="SteelBlue" Padding="3" Orientation="Horizontal" HeightRequest="200">
-            <Label Text="*Account Name*" FontSize="Large" HorizontalOptions="CenterAndExpand" 
+        <StackLayout BackgroundColor="SteelBlue" Padding="3" Orientation="Vertical" HeightRequest="200">
+            <StackLayout BackgroundColor="SteelBlue" Padding="3" Orientation="Horizontal" HeightRequest="200">
+                <Label Text="*Account Name*" FontSize="Large" HorizontalOptions="CenterAndExpand" 
                    HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
                    VerticalOptions="End" FontAttributes="Bold" TextColor="White"/>
-            <ImageButton BackgroundColor="SteelBlue" Source="dropdownarrow.png" x:Name="LgOutBtn"
+
+                <ImageButton BackgroundColor="SteelBlue" Source="dropdownarrow.png" x:Name="LgOutBtn"
                          Clicked="LgOutBtn_Clicked" HorizontalOptions="End" VerticalOptions="End"/>
+
+            </StackLayout>
+            <Label Text="User Created Date: Monday, May 13, 2019" FontSize="Small" HorizontalOptions="CenterAndExpand"
+                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White"/>
         </StackLayout>
         <ListView x:Name="ListViewMenu"
                     HasUnevenRows="True"

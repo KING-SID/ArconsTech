@@ -4,35 +4,40 @@
              x:Class="ArconClientPort.Views.NotificationsPage">
     
     <StackLayout>
-        <Label Text="Notifications" HorizontalOptions="Center" VerticalTextAlignment="Center" 
-               FontAttributes="Bold" FontSize="Large" />
+        <Grid Padding="5,5,5,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ImageButton Source="backarrowblack.png" BackgroundColor="AliceBlue"
+                         x:Name="BackBtnNotificationsPage" 
+                         Clicked="BackBtnNotificationsPage_Clicked"
+                         HorizontalOptions="Start" Grid.Row="0"
+                         HeightRequest="20" WidthRequest="20" Grid.Column="0"/>
+            <Label Text="Notifications" HorizontalOptions="Center" VerticalTextAlignment="Center" 
+               FontAttributes="Bold" FontSize="Large" Grid.Column="1" Grid.Row="0"/>
+        </Grid>
+        
+        
+
         <ListView x:Name="MyListView"
             ItemsSource="{Binding Items}"
             ItemTapped="Handle_ItemTapped"
             CachingStrategy="RecycleElement">
 
+
+
             <!--Built in Cells-->
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding .}" />
+                    <TextCell Text="{Binding .}" TextColor="Black"/> <!--was textcell-->
                 </DataTemplate>
             </ListView.ItemTemplate>
 
-            <!--Custom View Cells-->
-            <!--
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <ViewCell>
-          <StackLayout>
-            <Label Text="{Binding Text}" 
-                   Style="{DynamicResource ListItemTextStyle}" />
-            <Label Text="{Binding Detail}" 
-                   Style="{DynamicResource ListItemDetailTextStyle}"/>
-          </StackLayout>
-        </ViewCell>
-      </DataTemplate>
-    </ListView.ItemTemplate>
-    -->
         </ListView>
 
     </StackLayout>

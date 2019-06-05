@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ArconClientPort.Views.ActivityInPeriodTableContentView">
+
+    <Grid Padding="25,25,0,20" HorizontalOptions="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Text="Activity in Period" Grid.Row="0" Grid.Column="0" 
+                               Grid.ColumnSpan="2" HorizontalTextAlignment="Center"
+                               TextDecorations="Underline" TextColor="Black"/>
+        <Label x:Name="portvalenddatelbl" Text="{Binding DateChosen, StringFormat= 'Portfolio value on {0:MM/dd/yyyy}'}" Grid.Column="0" Grid.Row="1"/>
+        <Label Text="Net Contribution" Grid.Column="0" Grid.Row="2"/>
+        <Label Text="Realized Gains" Grid.Column="0" Grid.Row="3"/>
+        <Label Text="Unrealized Gains" Grid.Column="0" Grid.Row="4"/>
+        <Label Text="Interest" Grid.Column="0" Grid.Row="5"/>
+        <Label Text="Dividends" Grid.Column="0" Grid.Row="6"/>
+        <Label Text="Portfolio value on 07/01/2018" Grid.Column="0" Grid.Row="7"/>
+        <Label Text="$2353935.05" Grid.Row="1" Grid.Column="1"/>
+        <Label Text="$0.00" Grid.Row="2" Grid.Column="1"/>
+        <Label Text="$0.00" Grid.Row="3" Grid.Column="1"/>
+        <Label Text="$19453.07" Grid.Row="4" Grid.Column="1"/>
+        <Label Text="$5.09" Grid.Row="5" Grid.Column="1"/>
+        <Label Text="$8025.27" Grid.Row="6" Grid.Column="1"/>
+        <Label Text="$2334481.98" Grid.Row="7" Grid.Column="1"/>
+    </Grid>
+
+</ContentView>

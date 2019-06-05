@@ -16,8 +16,9 @@ namespace ArconClientPort.Views
             InitializeComponent();
 
             MasterBehavior = MasterBehavior.Split;
-
-            //MenuPages.Add((int)MenuItemType.Profile, (NavigationPage)Detail);
+            NavigationPage.SetHasNavigationBar(this, false);
+            NavigationPage.SetHasBackButton(this, false);           //
+            //MenuPages.Add((int)MenuItemType.Dashboard, (NavigationPage)Detail);
             
 
         }
@@ -28,24 +29,10 @@ namespace ArconClientPort.Views
             {
                 switch (id)
                 {
-                    /*case (int)MenuItemType.Browse:
-                        MenuPages.Add(id, new NavigationPage(new ItemsPage()));
-                        break;*/
+
 
                     case (int)MenuItemType.Dashboard:
                         MenuPages.Add (id, new NavigationPage(new DashboardPage()));
-                        break;
-
-                    case (int)MenuItemType.Profile:
-                        MenuPages.Add(id, new NavigationPage(new ProfilePage()));
-                        break;
-
-                    case (int)MenuItemType.ChangePassword:
-                        MenuPages.Add(id, new NavigationPage(new ChangePasswordPage()));
-                        break;
-
-                    case (int)MenuItemType.LayoutSettings:
-                        MenuPages.Add(id, new NavigationPage(new LayoutSettingsPage()));
                         break;
 
                     case (int)MenuItemType.About:

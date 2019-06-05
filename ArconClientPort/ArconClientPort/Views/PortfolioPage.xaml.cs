@@ -17,5 +17,7 @@ namespace ArconClientPort.Views
 			InitializeComponent ();
             NavigationPage.SetHasNavigationBar(this, false);  // Hide nav bar
         }
-	}
+
+       
+    }
 }

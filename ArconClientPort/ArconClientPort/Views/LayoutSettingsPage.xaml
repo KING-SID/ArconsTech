@@ -2,14 +2,25 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ArconClientPort.Views.LayoutSettingsPage"
-             NavigationPage.HasNavigationBar="False" >
+              >
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Layout Settings"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Button Text="Back"/>
+            <Grid Padding="5,5,5,0" VerticalOptions="Start">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Label Text="Layout Settings" HorizontalOptions="Center" VerticalTextAlignment="Center" 
+                FontSize="Medium" Grid.Column="1" Grid.Row="0"/>
+            </Grid>
+            <StackLayout VerticalOptions="Fill">
 
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

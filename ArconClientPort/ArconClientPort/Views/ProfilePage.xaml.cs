@@ -17,7 +17,8 @@ namespace ArconClientPort.Views
 			InitializeComponent ();
 		}
 
-        private void BackToDashboard_Clicked(object sender, EventArgs e)
+
+        private void ProfilePgBackBtnNotificationsPage_Clicked(object sender, EventArgs e)
         {
             Application.Current.MainPage = new MainPage();
         }
