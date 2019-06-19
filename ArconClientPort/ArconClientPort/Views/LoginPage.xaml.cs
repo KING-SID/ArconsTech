@@ -20,8 +20,8 @@ namespace ArconClientPort.Views
 
         private void LoginButton_Clicked(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new NavigationPage(new MainPage());
-            //Application.Current.MainPage = new MainPage();
+           // Application.Current.MainPage = new NavigationPage(new MainPage());
+            Application.Current.MainPage = new MainPage();
             //Application.Current.MainPage = new MainPage();
             //await Navigation.PushAsync(new MainPage());
 

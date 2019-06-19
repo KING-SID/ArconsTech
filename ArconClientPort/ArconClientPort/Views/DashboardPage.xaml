@@ -36,10 +36,83 @@ xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart
     <ScrollView>
      
 
-        <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" Spacing="15">
-            
+        <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" Spacing="10" BackgroundColor="AliceBlue">
 
-            <Grid RowSpacing="2" ColumnSpacing="2" HeightRequest="230" >
+            <Grid BackgroundColor="White" HeightRequest="150" Padding="20" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Market Value: $*Value*" Grid.Column="0" Grid.Row="0" FontSize="Medium" FontAttributes="Bold" 
+                       VerticalOptions="Center" />
+                <Label Text="Cash Available: $*Value*" Grid.Column="0" Grid.Row="1" LineBreakMode="WordWrap" 
+                       FontSize="Medium" FontAttributes="Bold" VerticalOptions="Center" />
+                <Label  Text="{Binding DateChosen, Mode=OneWay, StringFormat='{0:MM/dd/yyyy}'}" Grid.Column="0" Grid.Row="2" 
+                        x:Name="mktvaldatelbl" FontSize="Small" VerticalOptions="Center" />
+                <Image Source="mktval.png" Grid.RowSpan="3" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" />
+
+            </Grid>
+
+            <Grid BackgroundColor="White" HeightRequest="150" Padding="15" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="$*Value*" Grid.Column="0" Grid.Row="0" FontSize="Medium" FontAttributes="Bold" VerticalOptions="Center"/>
+                <Label Text="Interest and Dividends" Grid.Column="0" Grid.Row="1" FontSize="Medium" VerticalOptions="Center"/>
+                <Label Text="{Binding DateChosen, Mode=OneWay, StringFormat='{0:MM/dd/yyyy}'}"
+                               Grid.Column="0" Grid.Row="2" FontSize="Small" 
+                               x:Name="intdivdatelbl" VerticalOptions="Center"/>
+                <Image Source="interestndivs.png"  Grid.RowSpan="3" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" />
+
+            </Grid>
+
+            <Grid BackgroundColor="White" HeightRequest="150" Padding="15" Margin="10">
+                <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="$*Value*" Grid.Column="0" Grid.Row="0" FontSize="Medium" FontAttributes="Bold" VerticalOptions="Center"/>
+                <Label Text="{Binding DateChosen, Mode=OneWay, StringFormat='Deposits and Withdrawals from {0:MM/dd/yyyy}'}" Grid.Column="0" Grid.Row="2" FontSize="Small" VerticalOptions="Center"/>
+                        <Image Source="depnwids.png" Grid.RowSpan="3" Grid.Column="1" Grid.Row="0" VerticalOptions="Center"/>
+
+                    </Grid>
+
+            <Grid BackgroundColor="White" HeightRequest="150" Padding="15" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="NA" Grid.Column="0" Grid.Row="0" FontAttributes="Bold" VerticalOptions="Center" FontSize="Medium"/>
+                <Label Text="Current Statement " Grid.Column="0" Grid.Row="2" FontSize="Small" VerticalOptions="Center"/>
+                <Image Source="curstate.png" Grid.RowSpan="3" Grid.Column="1" Grid.Row="0"/>
+
+            </Grid>
+
+
+
+
+            <!-- <Grid RowSpacing="2" ColumnSpacing="2" HeightRequest="230" BackgroundColor="White">
 
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40*" />
@@ -63,7 +136,7 @@ xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart
                         <Label Text="Market Value: $*Value*" Grid.Column="0" Grid.Row="0" FontSize="Micro" FontAttributes="Bold"/>
                         <Label Text="Cash Available: $*Value*" Grid.Column="0" Grid.Row="1" LineBreakMode="WordWrap" FontSize="Micro"
                                FontAttributes="Bold"/>
-                        <!--Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='{0:MM/dd/yyyy}'}"-->
+
                         <Label  Text="{Binding DateChosen, Mode=OneWay, StringFormat='{0:MM/dd/yyyy}'}"
                                Grid.Column="0" Grid.Row="2" x:Name="mktvaldatelbl" FontSize="Micro" 
                                VerticalTextAlignment="End"/>
@@ -76,7 +149,7 @@ xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart
                 </cards:SfCardView>
                 <cards:SfCardView SwipeToDismiss="False" Grid.Row="0" Grid.Column="1">
 
-                    <Grid Padding="5">
+                    <Grid Padding="5" BackgroundColor="White" HeightRequest="200">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
@@ -135,7 +208,7 @@ xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart
 
                 </cards:SfCardView>
 
-            </Grid>
+            </Grid>-->
 
 
             <controls:CarouselViewControl Orientation="Horizontal" InterPageSpacing="10"  HeightRequest="500" BackgroundColor="White"

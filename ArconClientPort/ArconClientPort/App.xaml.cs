@@ -27,7 +27,7 @@ namespace ArconClientPort
 
             DateSelected.datechosen = DateTime.Now;
             MainPage =  new LoginPage();
-            //MainPage = new NotificationsPage();
+            //MainPage = new AboutPage();
             //MainPage = new DashboardPage();
             //Navigation{ new LoginPage() };
             //DateSelected.DateRange = DateTime.Now;

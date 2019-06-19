@@ -18,7 +18,7 @@ namespace ArconClientPort.Views
             MasterBehavior = MasterBehavior.Split;
             NavigationPage.SetHasNavigationBar(this, false);
             //NavigationPage.SetHasBackButton(this, false);           //
-            MenuPages.Add((int)MenuItemType.Dashboard, (NavigationPage)Detail);
+            //MenuPages.Add((int)MenuItemType.Dashboard, (NavigationPage)Detail);
             
 
         }

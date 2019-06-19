@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ArconClientPort.Views.AboutPage"
              xmlns:vm="clr-namespace:ArconClientPort.ViewModels"
-             Title="{Binding Title}"
-              >
+             Title="{Binding Title}">
     
     <ContentPage.BindingContext>
         <vm:AboutViewModel />
